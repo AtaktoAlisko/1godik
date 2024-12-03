@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  background-image: url("../../public/images/back.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Noto Serif Display", serif;
+}
+
+.stars {
+  animation: resize 5s ease-in-out infinite alternate;
+}
+
+.kurmet {
+  color: #4a90e2;
+}
+
+.kurmet2 {
+  color: rgb(170, 9, 9);
+  font-family: "Great Vibes", cursive;
+  font-size: 2rem;
+}
+
+@keyframes resize {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  75% {
+    transform: scale(1);
+  }
+}
+
+.car {
+  transform: translateX(-50%);
+  animation: moveForwardBackward 4s linear infinite alternate;
+  margin-top: 80px;
+  margin-bottom: -80px;
+}
+
+@keyframes moveForwardBackward {
+  0%,
+  100% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(-50%) translateX(-50px);
+  }
+}
+
+.rotate-image {
+  animation: rotate 20s linear infinite;
+}
+
+.image {
+  width: 30px;
+  height: 40px;
+}
+
+.shar {
+  position: absolute;
+  left: 0;
+  top: 1500px;
+  animation-name: bounce;
+  animation-duration: 20s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-200px);
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 300px) {
+  .image {
+    margin-top: -185px;
+    margin-right: -55px;
+  }
+}
+
+@media (min-width: 320px) {
+  .image {
+    margin-top: -193px;
+    margin-right: -60px;
+  }
+}
+
+@media (min-width: 360px) {
+  .image {
+    margin-top: -220px;
+    margin-right: -65px;
+  }
+}
+
+@media (min-width: 375px) {
+  .image {
+    margin-top: -225px;
+    margin-right: -65px;
+  }
+}
+
+@media (min-width: 390px) {
+  .image {
+    margin-top: -236px;
+    margin-right: -70px;
+  }
+}
+
+.text-animation {
+  animation-name: textAnimation;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes textAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* General adjustments */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.stars-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.event-info,
+.address-info {
+  margin-top: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.event-info p,
+.address-info p {
+  margin: 5px 0;
+}
+
+.car-animation-container {
+  margin-top: 150px;
+}
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.images-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -85px;
+}
+
+.images-section img {
+  transform: rotate(10deg);
+}
+
+.footer-stars {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 40px;
+}
+
+.footer-text {
+  font-size: 18px;
+  text-align: center;
+}

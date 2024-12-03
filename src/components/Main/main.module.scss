@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&display=swap");
+
+.Main {
+  overflow: hidden;
+  .pictures {
+    .cloud {
+      position: fixed;
+
+      &.movingImage {
+        position: absolute;
+        top: 0;
+        animation: move-left-right 10s linear infinite alternate;
+      }
+    }
+
+    .cloudSecond {
+      position: fixed;
+      margin-top: 20px;
+
+      &.movingImageSecond {
+        position: absolute;
+        top: 0;
+        animation: move-right-left 10s linear infinite alternate;
+      }
+    }
+
+    .bear {
+      position: relative;
+      animation: resize 5s ease-in-out infinite alternate;
+    }
+  }
+
+  .cloudThird {
+    position: fixed;
+    &.movingImageThird {
+      position: absolute;
+      animation: move-right-lefts 10s linear infinite alternate;
+    }
+  }
+
+  .Tomiris {
+    margin-bottom: 20px;
+    animation: resize 5s ease-in-out infinite alternate;
+    color: #4a90e2; /* стильный мужской синий цвет */
+    font-family: "Great Vibes", cursive;
+    font-size: 2rem; /* увеличенный размер текста */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4),
+      0 0 10px rgba(74, 144, 226, 0.6); /* мягкое свечение синего оттенка */
+    letter-spacing: 1px; /* немного увеличенное расстояние между буквами */
+    text-align: center; /* выравнивание текста по центру */
+  }
+  .starss {
+    animation: resize 5s ease-in-out infinite alternate;
+    margin-bottom: 30px;
+  }
+
+  .stars {
+    animation: resize 5s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes move-left-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes move-right-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes move-right-lefts {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes resize {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  75% {
+    transform: scale(1);
+  }
+}
+@media (max-width: 768px) {
+  .mx-auto-mobile {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

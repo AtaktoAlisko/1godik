@@ -1,0 +1,92 @@
+.App {
+  justify-content: center;
+  flex-direction: column;
+  text-align: start;
+  margin-top: 30px;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
+    text-align: start;
+  }
+
+  .wishes {
+    height: 100px;
+  }
+  .anketa {
+    color: #800000;
+  }
+
+  input[type="text"],
+  input[type="submit"] {
+    border-color: antiquewhite;
+    width: 175px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  input[type="text"]:focus,
+  input[type="submit"]:focus {
+    outline: none;
+  }
+
+  .radio {
+    margin: 15px;
+  }
+
+  .button {
+    width: 100%;
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #800000;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #800000;
+    }
+  }
+  .radio {
+    margin: 15px;
+
+    input[type="radio"] {
+      margin-right: 5px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #800000;
+      border-radius: 50%;
+      outline: none;
+      cursor: pointer;
+    }
+
+    label {
+      font-size: 16px;
+    }
+
+    input[type="radio"]:checked {
+      background-color: #800000;
+    }
+  }
+
+  input[type="text"],
+  input[type="submit"] {
+    border-color: #800000;
+    width: 150px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+}
