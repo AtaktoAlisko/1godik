@@ -19,14 +19,18 @@ export default function BirthdayRSVP() {
     setError("");
     setSuccessMessage("");
 
+    // Подготовка данных для отправки
     const payload = new URLSearchParams();
     payload.append("name", name);
-    payload.append("attendance", attendance);
+    payload.append(
+      "attendance",
+      attendance === "Приду" ? "Келемін" : "Келе алмаймын"
+    );
 
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://script.google.com/macros/s/AKfycbzF9o0Elq-5Ird5bipldEW0kzjFhuExH6Z28UJDWddsoR9-F4rKW0LUMv3bZfdMd6b-dA/exec",
+        "https://script.google.com/macros/s/AKfycbxCoQLnJIwVk5h21ZtINTyHOCG6yoG8OuqG0ffA_ZqWg8bi69j76o4pNX1HDGiH0eg4_w/exec",
         payload,
         {
           headers: {
@@ -38,9 +42,13 @@ export default function BirthdayRSVP() {
       setAttendance("");
       setName("");
       setLoading(false);
-    } catch (error) {
+    } catch (error: unknown) {
       console.error("Ошибка при отправке формы:", error);
-      setError("Произошла ошибка.");
+      if (axios.isAxiosError(error)) {
+        setError(`Произошла ошибка: ${error.response?.data || error.message}`);
+      } else {
+        setError(`Произошла неизвестная ошибка: ${(error as Error).message}`);
+      }
       setLoading(false);
     }
   };
